@@ -5,7 +5,7 @@
 body {
 	font-family: 'Poppins', sans-serif;
 	font-size: 14px;
-	background-color: #ECDFCC;
+	background-color: #F6F1F1;
 }
 a {
 	color:#5f0099;
@@ -29,16 +29,16 @@ h6 {
 	color:#000000;
 }
 .navbar {
-	position: fixed;
-	right: 0;
-	left: 0;
-	width: 100%;
-	padding-left: 0;
-	padding-right: 0;
-	min-height: 50px;
-	line-height: 50px;
-	background: transparent;
-	z-index: 1030;
+    position: fixed;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    min-height: 50px;
+    line-height: 50px;
+    background-color: #000000; /* Fondo negro */
+    z-index: 1030;
 }
 .navbar .navbar-brand .logo-1 {
     max-height: 70px; /* Ajusta este valor según el tamaño que necesites */
@@ -46,37 +46,92 @@ h6 {
     width: auto;
 }
 
-/* Estilos para el Botón Contacto */
-.btn-contacto {
-    font-weight: 600;
-    border-radius: 5px;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    background-color: #ffffff; /* Fondo blanco */
-    color: #000000; /* Texto negro */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transiciones suaves */
-}
-
-.btn-contacto:hover {
-    background-color: #35B6FA; /* Fondo azul al hacer hover */
-    color: #ffffff; /* Texto blanco al hacer hover */
-}
-
-/* Estilos para el Botón Productos */
-.btn-productos {
-    font-weight: 600;
-    border-radius: 5px;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    background-color: #35B6FA; /* Fondo azul */
+/* Estilos para el Botón Instagram */
+.btn-instagram {
+    font-weight: 500;
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 8px 16px; /* Padding reducido */
+    background-color: #0059d5; /* Color característico de Instagram */
     color: #ffffff; /* Texto blanco */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transiciones suaves */
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px; /* Tamaño de texto reducido */
 }
 
-.btn-productos:hover {
-    background-color: #ffffff; /* Fondo blanco al hacer hover */
-    color: #000000; /* Texto negro al hacer hover */
+.btn-instagram i {
+    margin-right: 6px;
+    font-size: 16px; /* Tamaño del ícono reducido */
 }
+
+.btn-instagram:hover {
+    background-color: #004bb4; /* Fondo más oscuro al hacer hover */
+    color: #ffffff; /* Mantiene el texto blanco */
+}
+
+
+/* Estilos para el Botón WhatsApp */
+.btn-whatsapp {
+    font-weight: 500;
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 8px 16px; /* Padding reducido */
+    background-color: #25D366; /* Color característico de WhatsApp */
+    color: #ffffff; /* Texto blanco */
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px; /* Tamaño de texto reducido */
+}
+
+.btn-whatsapp i {
+    margin-right: 6px;
+    font-size: 16px; /* Tamaño del ícono reducido */
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe57; /* Fondo más oscuro al hacer hover */
+    color: #ffffff; /* Mantiene el texto blanco */
+}
+
+/* Estilo adicional para el contenedor de botones */
+.social-buttons {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+}
+
+.social-buttons li {
+    margin-right: 0;
+	padding-right: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .social-buttons {
+        justify-content: center; /* Asegura que se mantengan centrados en móviles */
+    }
+
+    .social-buttons li {
+        margin-bottom: 8px; /* Pequeña separación vertical en móviles */
+    }
+
+    .social-buttons .btn {
+        flex: 1;
+        text-align: center;
+        padding: 10px 12px; /* Ajusta el padding para pantallas pequeñas */
+        font-size: 13px; /* Reduce ligeramente el tamaño del texto en móviles */
+    }
+
+    .social-buttons .btn i {
+        margin-right: 4px;
+        font-size: 14px; /* Reduce ligeramente el tamaño del ícono en móviles */
+    }
+}
+
+
+
 
 
 .navbar .active {
@@ -136,56 +191,76 @@ h6 {
 .nav-scroll .active {
 	position: relative;
 }
+/* Estilos para el banner */
 .banner {
-	/* background: linear-gradient(to left, #7a60ff, #cd9ffa); */
-	background: linear-gradient(to left, #35B6FA, #7fb8ff);
-	background: #000000;
-	padding:100px 0px;
-	position:relative;
+    position: relative;
+    padding: 100px 0;
+    background: url('./images//fondo-agua.jpg') no-repeat center center; /* Imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
 }
-.banner::before {
-	content: "";
-	display: block;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	/* background: url(images/pattern.png); */
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen con un color negro semitransparente */
+    z-index: 1;
 }
+
+.banner .container, .banner .row {
+    position: relative;
+    z-index: 2;
+}
+
 .banner a.weblink {
-	color:#ffffff;
-	border-bottom:1px dotted #ffffff;
+    color: #ffffff;
+    border-bottom: 1px dotted #ffffff;
 }
+
 .banner a:hover {
-	text-decoration:none;
+    text-decoration: none;
 }
+
 .svg-wave {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
+
 .banner-text {
-	padding-right:80px;
-	margin:50px 0px 0px;
+    padding-right: 80px;
+    margin: 50px 0px 0px;
+    color: #ffffff; /* Asegura que el texto sea blanco */
 }
-.banner-text p {
-	margin:40px 0px;
+
+.banner-text h3, .banner-text h6, .banner-text p {
+    color: #ffffff; /* Asegura que todos los textos sean blancos */
 }
+
 .banner-text ul {
-	list-style: none;
+    list-style: none;
+    padding: 0;
 }
+
 .banner-text ul li {
-	display: inline-block;
-	margin: 0px 10px 10px 0px;
+    display: inline-block;
+    margin: 0px 10px 10px 0px;
 }
+
 .banner-text ul li a {
-	display: block;
+    display: block;
 }
+
 .banner-text ul li a img {
-	width: 150px;
-	border-radius: 7px;
+    width: 150px;
+    border-radius: 7px;
 }
+/* fin BANNER */
+
+
+
 .prelative {
 	position:relative
 }
@@ -542,145 +617,185 @@ input {
 
 /* SECTION addpropio */
 .img_content {
-	margin-top: 55px;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+    flex-direction: column; /* Asegura que el contenido esté en columna */
+    margin-top: 20px;
+    height: 100%; /* Asegura que ocupe toda la altura disponible */
 }
+
 .img_container {
-	border: 7px solid #35B6FA;
-	border-radius: 100%;
-	overflow: hidden;
+    border: 7px solid #0059d5;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-div#carouselExampleContarols {
-	width: 100%;
-	position: unset;
+
+div#carouselExampleControls {
+    width: 100%;
+    position: unset;
 }
+
 .img-box img {
-	width: 100%;
+    width: 100%;
 }
+
 .carousel-control-prev,
 .carousel-control-next {
-  top: initial;
-  left: initial;
-  bottom: 5%;
-  right: 10%;
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 100%;
-  opacity: 1;
-  background-repeat: no-repeat;
-  background-size: 8px;
-  background-position: center;
+    top: initial;
+    left: initial;
+    bottom: 5%;
+    right: 10%;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 100%;
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: center;
 }
 
 .carousel-control-prev {
-	background-image: url(../images/prev.png);
-	background-color: #ffffff;
-	-webkit-transform: translate(-85px, 30px);
-			transform: translate(-85px, 30px);
-}
-  
-.carousel-control-next {
-	background-image: url(../images/next.png);
-	background-color: #0059d5;
-	-webkit-transform: translate(-45px, 0);
-			transform: translate(-45px, 0);
-}
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
+    background-image: url(./images/prev.png);
+    background-color: #ffffff;
+    -webkit-transform: translate(-85px, 30px);
+            transform: translate(-85px, 30px);
 }
 
-/* Service Section */
+.carousel-control-next {
+    background-image: url(./images/next.png);
+    background-color: #0059d5;
+    -webkit-transform: translate(-45px, 0);
+            transform: translate(-45px, 0);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+
+/* PRODUCTOS SECTION */
 .service_section {
 	text-align: center;
 	padding-top: 25px;
-  }
-  
-  .service_section .service_container {
+}
+
+.service_section .heading_container h2 {
+	margin-bottom: 30px;
+	font-size: 2.5rem;
+	color: #333;
+}
+
+.service_section .service_container {
 	display: flex;
 	justify-content: center;
-	padding: 0;
 	flex-wrap: wrap;
 	padding-top: 0px;
-  }
-  
-  .service_section .service_container {
-	display: flex;
-	justify-content: center;
-	padding: 0;
-	flex-wrap: wrap;
-  }
-  
-  .service_section .service_container .box {
+}
+
+.service_section .service_container .box {
 	margin: 15px 1%;
-	flex-basis: 23%;
+	width: 23%; /* Ancho fijo para todas las tarjetas */
+	height: 300px; /* Altura fija para todas las tarjetas */
 	border-radius: 15px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 	overflow: hidden;
-	transition: all .1s;
-	padding: 0;
-	height: 250px; /* Ajusta la altura total de la tarjeta */
-  }
-  
-  .service_section .service_container .box .img-box {
+	transition: all 0.3s ease-in-out;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	position: relative; /* Posicionamiento relativo para contener el overlay */
+}
+
+.service_section .service_container .box:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service_section .service_container .box .img-box {
 	width: 100%;
-	height: 80%; /* Reduce la altura de la imagen */
+	height: 100%; /* Ocupa toda la tarjeta */
 	overflow: hidden;
-  }
-  
-  .service_section .service_container .box .img-box img {
+	position: relative;
+}
+
+.service_section .service_container .box .img-box img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
-  }
-  
-  .service_section .service_container .box .detail-box {
-	height: 35%; /* Ajusta la altura de la sección de detalles */
-	background-color: #f8f8f8;
+	object-fit: cover; /* Asegura que la imagen cubra todo el área */
+	transition: transform 0.3s ease-in-out;
+}
+
+.service_section .service_container .box:hover .img-box img {
+	transform: scale(1.1);
+}
+
+.service_section .service_container .box .img-box .title-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Degradado desde negro a transparente */
 	padding: 10px;
 	text-align: center;
-  }
-  
-  .service_section .service_container .box .detail-box h5 {
-	/* color: #245eff; */
-	font-weight: 600;
+}
+
+.service_section .service_container .box .img-box .title-overlay h5 {
+	color: #ffffff; /* Título en color blanco */
 	margin: 0;
-  }
-  
-  .service_section .service_container .box:hover, .service_section .service_container .box.active {
-	border-top: 15px solid #245eff;
-  }
-  
-  .service_section .btn-box {
-	display: -webkit-box;
-	display: -ms-flexbox;
+	font-weight: 600;
+}
+
+.service_section .btn-box {
 	display: flex;
-	-webkit-box-pack: center;
-		-ms-flex-pack: center;
-			justify-content: center;
+	justify-content: center;
 	margin-top: 25px;
-  }
-  
-  .service_section .btn-box a {
+}
+
+.service_section .btn-box a {
 	display: inline-block;
 	padding: 10px 35px;
-	background-color: #4b208c;
+	background-color: #35B6FA;
 	color: #ffffff;
 	border-radius: 35px;
-  }
-  
-  .service_section .btn-box a:hover {
-	background-color: #5625a1;
-  }
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.service_section .btn-box a:hover {
+	background-color: #0059d5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.service_section .service_container .box {
+		width: 100%; /* Las tarjetas ocupan el 100% del ancho en móviles */
+		margin: 15px 0;
+		height: auto; /* Ajusta la altura para adaptarse al contenido en móviles */
+	}
+	
+	.service_section .service_container .box .img-box {
+		height: 250px; /* Ajusta la altura de la imagen en móviles si es necesario */
+	}
+}
 
 
 
+
+/* END PRODUCTOS SECTION */
 
 
 
@@ -688,7 +803,7 @@ div#carouselExampleContarols {
 @media all and (max-width:991px) {
 .navbar .navbar-collapse {
 	overflow: auto;
-	background:  rgb(213, 198, 221);
+	background:  #000000;
 	color: #fff !important;
 	text-align: center;
 	padding: 10px 0;
